@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var balance = 300000;
+        var choice = prompt('What do you want to do? \n1. Check Balance \n2. Withdraw Amount \n3. Deposit \n4. Finish Transaction');
+        var keepgoing=true;
+        switch(choice){
+            case '1':
+                alert(`Your Balance is: ${balance}`);
+                break;
+            case '2':
+                balance -= parseInt(prompt("How much would you like to withdraw?"));
+                alert(`Your Balance is now: ${balance}`);
+                break;
+            case '3':
+                balance += parseInt(prompt("How much would you like to deposit?"));
+                alert(`Your Balance is now: ${balance}`);
+                break;
+            case '4':
+                alert(`Thank you for transacting! \nRemaining Balance: ${balance}`)
+                
+        }
+    </script>   
+</body>
+</html>
