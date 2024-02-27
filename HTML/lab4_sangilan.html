@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateArea(a,b,c){
+            b = parseInt(b);
+            c = parseInt(c);
+            switch(a){
+                case "rectangle":
+                    console.log(b*c);
+                    break;
+                case "triangle":
+                    console.log(b*c/2);
+                    break;
+                case "square":
+                    console.log(b*b);
+                    break;
+                default:
+                    return Error;
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

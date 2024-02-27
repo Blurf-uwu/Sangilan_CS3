@@ -6,25 +6,45 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Thank you for transacting</h1>
+    <p id="WA">Withdraw Amount: 0</p>
+    <p id="RB">Remaining Balance: 300000</p>
     <script>
-        var balance = 300000;
-        var choice = prompt('What do you want to do? \n1. Check Balance \n2. Withdraw Amount \n3. Deposit \n4. Finish Transaction');
-        var keepgoing=true;
+
+        let balance = 300000;
+        let WithDepAmount;
+        let choice = prompt('What do you want to do? \n1. Check Balance \n2. Withdraw Amount \n3. Deposit \n4. Finish Transaction');
         switch(choice){
             case '1':
-                alert(`Your Balance is: ${balance}`);
+                if(confirm('you sure?')){
+                    alert(`Balance: ${balance}`);
+                    break;
+                }
+                
                 break;
             case '2':
-                balance -= parseInt(prompt("How much would you like to withdraw?"));
-                alert(`Your Balance is now: ${balance}`);
+                if(confirm('you sure?')){
+                    WithDepAmount = parseInt(prompt("How much would you like to withdraw?"));
+                    balance -= WithDepAmount;
+                    document.getElementById('WA').innerHTML = `Withdraw Amount: ${WithDepAmount}`;
+                    document.getElementById('RB').innerHTML = `Remaining Balance: ${balance}`;
+
+                }
                 break;
             case '3':
-                balance += parseInt(prompt("How much would you like to deposit?"));
-                alert(`Your Balance is now: ${balance}`);
+                if(confirm('you sure?')){
+                    WithDepAmount = parseInt(prompt("How much would you like to deposit?"));
+                    balance += WithDepAmount;
+                    document.getElementById('WA').innerHTML = `Deposit Amount: ${WithDepAmount}`;
+                    document.getElementById('RB').innerHTML = `Remaining Balance: ${balance}`;
+                }
                 break;
             case '4':
-                alert(`Thank you for transacting! \nRemaining Balance: ${balance}`)
-                
+                alert(`Thank you for transacting!`);
+                keepgoing = false;
+                break;
+            default:
+                alert(`${choice} is not an option`)
         }
     </script>   
 </body>

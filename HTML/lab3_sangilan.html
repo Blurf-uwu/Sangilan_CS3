@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="num1">
+    <button onclick="isDivisible()">is the number divisible by 10?</button>
+    <h1 id="result"></h1>
+    <script>
+        function isDivisible(){
+            var num1 = parseInt(document.getElementById('num1').value)
+            if((num1%10)==0){
+                document.getElementById('result').innerHTML = true;
+            }
+            else{
+                document.getElementById('result').innerHTML = false;
+            }
+        }
+    </script>
+</body>
+</html>
