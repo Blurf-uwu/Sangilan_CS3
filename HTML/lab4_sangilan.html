@@ -8,8 +8,6 @@
 <body>
     <script>
         function calculateArea(a,b,c){
-            b = parseInt(b);
-            c = parseInt(c);
             switch(a){
                 case "rectangle":
                     console.log(b*c);
@@ -21,7 +19,7 @@
                     console.log(b*b);
                     break;
                 default:
-                    return Error;
+                    return Error(`${a} is not a shape`);
                     break;
             }
         }

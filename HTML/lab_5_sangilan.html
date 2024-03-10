@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var biology = 1.00;
+        var chem = 1.00;
+        var physics = 1.00;
+        var math = 1.00;
+        var english = 1.00;
+        var filipino = 1.25;
+        var sociaScience = 1.00;
+        var PEHM = 1.00;
+        var statistics = 1.00;
+        var computerScience = 1.00;
+        var tentative = (biology+chem+physics+math+english+filipino+sociaScience+PEHM+statistics+computerScience)/10;
+
+        switch(true){
+            case (tentative < 1.125):
+                console.log(1.00);
+                break;
+            case (tentative > 1.125 && tentative < 1.375):
+                console.log(1.25);
+                break;
+            case (tentative > 1.375 && tentative < 1.625):
+                console.log(1.50);
+                break;
+            case (tentative > 1.625 && tentative < 1.875):
+                console.log(1.75);
+                break;
+            case (tentative > 1.875 && tentative < 1.2125):
+                console.log(2.00);
+                break;
+            case (tentative > 2.125 && tentative < 2.375):
+                console.log(2.25);
+                break;
+            case (tentative > 2.375 && tentative < 2.625):
+                console.log(2.50);
+                break;
+            case (tentative > 2.625 && tentative < 2.875):
+                console.log(2.75);
+                break;
+            case (tentative > 2.875 && tentative < 3.5):
+                console.log(3.00);
+                break;
+            case (tentative > 3.5 && tentative < 4.5):
+                console.log(4.00);
+                break;
+            default:
+                5.00;
+                break;
+            }   
+    </script>
+</body>
+</html>
