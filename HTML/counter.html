@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Counter</h1>
+    <button onclick="inc()">Increase</button>
+    <button onclick="dec()">Decrease</button>
+    <h2 id="counter">1</h2>
+    <button onclick="res()">Reset</button>
+    <script>
+        let count = parseInt(document.getElementById('counter').innerHTML);
+
+        function inc(){
+            switch(true){
+                case(count < 20):
+                    count+=1;
+                    break;
+                case(count >= 20 && count < 30):
+                    count+=2;
+                    if(count > 30){
+                        count = 30;
+                    }
+                    break;
+                case(count >= 30 && count < 40):
+                    count+=3;
+                    if(count > 40){
+                        count = 40;
+                    }
+                    break;
+                case(count >= 40 && count < 50):
+                    count+=4;
+                    if(count > 50){
+                        count = 50;
+                    }
+                    break;
+                case(count >= 50 && count < 60):
+                    count+=5;
+                    if(count > 60){
+                        count = 60;
+                    }
+                    break;
+                case(count >= 60 && count < 70):
+                    count+=6;
+                    if(count > 70){
+                        count = 70;
+                    }
+                    break;
+                case(count >= 70 && count < 80):
+                    count+=7;
+                    if(count > 80){
+                        count = 80;
+                    }
+                    break;
+                case(count >= 80 && count < 90):
+                    count+=8;
+                    if(count > 90){
+                        count = 90;
+                    }
+                    break;
+                case(count >= 90 && count < 100):
+                    count+=9;
+                    if(count > 100){
+                        count = 100;
+                    }
+                    break;
+            }
+
+            document.getElementById('counter').innerHTML = count;
+        }
+
+        function dec(){
+            if(count > 0){
+                count-=1;
+            }
+
+            document.getElementById('counter').innerHTML = count;
+        }
+
+        function res(){
+            count = 0;
+
+            document.getElementById('counter').innerHTML = count;
+        }
+    </script>
+</body>
+</html>

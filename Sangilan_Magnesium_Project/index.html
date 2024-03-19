@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./css/cascadingStyleSheetsInCamelCase.css" />
+  </head>
+  <body>
+      <!-- Name of the Project: Tic Tac Toe-->
+    <h1>Tic Tac Toe</h1>
+    <!-- Description: This app is the known childhood game Tic Tac Toe. 
+        I'm pretty sure almost everyone knows the rules, so I will just share my thinking process. 
+        First, I used a gridbox to easily create the grid using css. 
+        Then, I started on the js part by declaring the variables that I'll need. 
+        After that, I started creating the functions: resetGame(), checkForWins(), and changeValue(). 
+        Finally, i touched up some details and added documentation(this is the last thing that I did).
+    -->
+
+    <div id="grid"> <!-- the tic tac toe grid. learned Grid and FlexBox from https://youtu.be/EiNiSFIPIQE?si=vu2567CHrhNnilGg and https://youtu.be/phWxA89Dy94?si=RfoLaV0lbi6vpg0l, respectively-->
+      <div class="innerBox" id="box1" onclick="changeValue('box1')"></div>
+      <div class="innerBox" id="box2" onclick="changeValue('box2')"></div>
+      <div class="innerBox" id="box3" onclick="changeValue('box3')"></div>
+      <div class="innerBox" id="box4" onclick="changeValue('box4')"></div>
+      <div class="innerBox" id="box5" onclick="changeValue('box5')"></div>
+      <div class="innerBox" id="box6" onclick="changeValue('box6')"></div>
+      <div class="innerBox" id="box7" onclick="changeValue('box7')"></div>
+      <div class="innerBox" id="box8" onclick="changeValue('box8')"></div>
+      <div class="innerBox" id="box9" onclick="changeValue('box9')"></div>
+    </div>
+
+    <button onclick="resetGame()">Reset</button> 
+
+
+    <script src="./js/javaScriptInCamelCase.js"></script> <!--Functions and Descs found in js file-->
+
+    <!--Result: A basic Tic Tac Toe game that friends can play when bored with nothing to do.-->
+  </body>
+</html>

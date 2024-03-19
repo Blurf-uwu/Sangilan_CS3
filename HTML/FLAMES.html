@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="1" placeholder="Person 1">
+    <input type="text" id="2" placeholder="Person 2">
+    <button onclick="FLAMES()">FLAMES Test</button>
+    <br>
+    <h1 id="output"></h1>
+    <script>
+        function FLAMES(){
+            let name1 = document.getElementById('1').value;
+            let name2 = document.getElementById('2').value;
+            name1 = Array.from(new Set (name1.split('')));
+            name2 = Array.from(new Set (name2.split('')));
+            let len1 = name1.length;
+            let len2 = name2.length;
+            let counter = 0;
+            let bigger = len1 > len2 ? len1 : len2; 
+            let big = len1 >= len2 ? name1 : name2;
+            let smol = len1 < len2 ? name1 : name2;
+    
+            for(let i = 0; i < bigger;i++){
+                if(big.includes(smol[i])){
+                    counter++;
+                }
+            }
+    
+            switch((counter-1) % 6){
+                case 1:
+                    document.getElementById('output').innerHTML = 'Friends';
+                    break;
+                case 2:
+                    document.getElementById('output').innerHTML = 'Lovers';
+                    break;
+                case 3:
+                    document.getElementById('output').innerHTML = 'Affection';
+                    break;
+                case 4:
+                    document.getElementById('output').innerHTML = 'Marriage';
+                    break;
+                case 5:
+                    document.getElementById('output').innerHTML = 'Enemies';
+                    break;
+                case 0:
+                    document.getElementById('output').innerHTML = 'Soulmates';
+                    break;
+                default:
+                    document.getElementById('output').innerHTML = 'Nothing 😥';
+                    break;
+    
+            }
+            
+        }
+    </script>
+</body>
+</html>
