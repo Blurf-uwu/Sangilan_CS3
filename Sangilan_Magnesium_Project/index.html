@@ -7,16 +7,36 @@
     <link rel="stylesheet" href="./css/cascadingStyleSheetsInCamelCase.css" />
   </head>
   <body>
-      <!-- Name of the Project: Tic Tac Toe-->
-    <h1>Tic Tac Toe</h1>
-    <!-- Description: This app is the known childhood game Tic Tac Toe. 
-        I'm pretty sure almost everyone knows the rules, so I will just share my thinking process. 
+    <!-- 
+      
+    Name of the Project: Tic Tac Toe
+
+    -----------------------------------------Description----------------------------------------------
+    
+    This app is a recreation of the popular childhood game Tic Tac Toe. 
+      I'm pretty sure almost everyone knows the rules, so I will just share my thinking process. 
+      
+      Process:
         First, I used a gridbox to easily create the grid using css. 
         Then, I started on the js part by declaring the variables that I'll need. 
         After that, I started creating the functions: resetGame(), checkForWins(), and changeValue(). 
         Finally, i touched up some details and added documentation(this is the last thing that I did).
-    -->
 
+    ------------------------------------------Functions----------------------------------------------
+
+      (1) resetGame(): This function resets the values on the grid and the values of the variable 
+        used to keep track of the grid.
+
+      (2) checkForWins(): This function checks for any winning combinations OR if a tie has occured, 
+        announces the result, then calls resetGame().
+
+      (2) changeValue(): Changes the value of the .innerText of a grid and its corresponding variable
+        depending on the current symbol: X or O.
+
+    Result: Result: A basic Tic Tac Toe game that friends can play when bored with nothing to do
+    -->
+      
+    <h1>Tic Tac Toe</h1>
     <div id="grid"> <!-- the tic tac toe grid. learned Grid and FlexBox from https://youtu.be/EiNiSFIPIQE?si=vu2567CHrhNnilGg and https://youtu.be/phWxA89Dy94?si=RfoLaV0lbi6vpg0l, respectively-->
       <div class="innerBox" id="box1" onclick="changeValue('box1')"></div>
       <div class="innerBox" id="box2" onclick="changeValue('box2')"></div>
@@ -32,8 +52,6 @@
     <button onclick="resetGame()">Reset</button> 
 
 
-    <script src="./js/javaScriptInCamelCase.js"></script> <!--Functions and Descs found in js file-->
-
-    <!--Result: A basic Tic Tac Toe game that friends can play when bored with nothing to do.-->
+    <script src="./js/javaScriptInCamelCase.js"></script> <!--Functions and Descs also found in js file-->
   </body>
 </html>
