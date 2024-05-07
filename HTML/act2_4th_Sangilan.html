@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let text = "HEllo Magnesium. Take CARE alwAys. Goodbye";
+        let numOfA = 0;
+        let numOfE = 0;
+        let numOfI = 0;
+        let numOfO = 0;
+        let numOfU = 0;
+        let textLower = text.toLowerCase();
+        for (let i = 0; i < textLower.length; i++){
+            switch(textLower[i]){
+                case 'a':
+                    numOfA++;
+                    break;
+                case 'e':
+                    numOfE++;
+                    break;
+                case 'i':
+                    numOfI++;
+                    break;
+                case 'o':
+                    numOfO++;
+                    break;
+                case 'u':
+                    numOfU++;
+                    break;
+            }
+        }
+        console.log(`a -> x${numOfA} \n e -> x${numOfE} \n i -> x${numOfI} \n o -> x${numOfO} \n u -> x${numOfU}`);
+    </script>
+</body>
+</html>

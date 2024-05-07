@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="numberStart" type="number" placeholder="Beginning Value">
+    <input id="numberEnd" type="number" placeholder="Ending Value">
+
+    <button onclick="getMultiTable()">Get Table</button>
+    <p id="pOutput"></p>
+
+    <script>
+        function getMultiTable(){
+            let start = parseInt(document.getElementById("numberStart").value);
+            let end = parseInt(document.getElementById("numberEnd").value);
+            let output = document.getElementById("pOutput");
+            let stringOutput = ""
+            if (start < 2 || end > 10){
+                alert('Please enter numbers between 2 and 10');
+            }
+            else if (start > end){
+                alert('Starting number cannot be greater that ending number')
+            }
+            else{
+                for (i = start; i <= end; i++){
+                    for (j = start; j <= end; j++){
+                        stringOutput += `${i*j} `;
+                    }
+                    stringOutput += '<br>';
+                }
+                output.innerHTML = stringOutput;
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

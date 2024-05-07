@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Sign-up Sheet</title>
+</head>
+<body>
+
+<form id="signupForm">
+<fieldset>
+	<legend>Sign-up Form</legend>
+
+	<label for="firstName">First Name:</label>
+	<input type="text" id="firstName" onfocus="uncheckForm(firstName)" onblur="checkForm(firstName)" required />
+	<br><br>
+
+	<label for="lastName">Last Name:</label>
+	<input type="text" id="lastName" onfocus="uncheckForm(lastName)" onblur="checkForm(lastName)" required />
+	<br><br>
+
+	<label for="email">Email:</label>
+	<input type="email" id="email" onfocus="uncheckForm(email)" onblur="checkForm(email)" required />
+	<br><br>
+
+	<label for="gender">Gender:</label>
+	<select id="gender" onfocus="uncheckForm(gender)" onblur="checkForm(gender)" required>
+		<option value="Male">Male</option>
+		<option value="Female">Female</option>
+		<option value="Prefer not to mention">Prefer not to mention</option>
+	</select>
+	<br><br>
+
+	<button type="button" onclick="outputForm()">Submit</button>
+	<button type="button" onclick="resetForm()">Reset</button>
+</fieldset>
+</form>
+
+<div id="output"></div>
+
+<script>
+let form = document.getElementById("signupForm");
+let output = document.getElementById("output");
+let firstName = document.getElementById("firstName");
+let lastName = document.getElementById("lastName");
+let email = document.getElementById("email");
+let gender = document.getElementById("gender");
+
+function outputForm(){
+
+	if(firstName.value !== "" && lastName.value !== "" && email.value !== ""){
+		output.innerHTML = `
+			<p>First Name: ${firstName.value}</p>
+			<p>Last Name: ${lastName.value}</p>
+			<p>Email: ${email.value}</p>
+			<p>Gender: ${gender.value}</p>
+		`;
+	}
+	else{
+		switch(""){
+			case firstName.value:
+			alert("invalid first name");
+			break;
+			case lastName.value:
+			alert("invalid last name");
+			break;
+			case email.value:
+			alert("invalid email address");
+			break;
+		}
+	}
+}
+
+function resetForm(){
+	form.reset(); 
+	output.innerHTML = ""; 
+}
+
+function checkForm(input){
+	if(input.value == ""){
+		input.style.border = "solid 1px red";
+	} 
+	else{
+		input.style.border = "solid 1px green";
+	}
+}
+
+function uncheckForm(input){
+	input.style.border = "solid 1px grey"
+}
+
+</script>
+</body>
+</html>

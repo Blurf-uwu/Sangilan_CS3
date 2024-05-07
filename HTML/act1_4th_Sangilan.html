@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="aVal">
+    <input id="bVal">
+    <input id="cVal">
+    <button onclick="idk(
+        parseInt(document.getElementById('aVal').value),
+        parseInt(document.getElementById('bVal').value),
+        parseInt(document.getElementById('cVal').value)
+        )">Solve</button>
+    <p id="values"></p>
+    <h1 id="roots"></h1>
+
+    <script>
+        function idk(a,b,c){
+            let discriminant = (b**2)-(4*a*c);
+            document.getElementById("values").innerHTML = (`a = ${a}, b = ${b}, c = ${c}`)
+
+            if (discriminant > 0){
+                document.getElementById("roots").innerHTML = 
+                (`root1 = ${(-b + Math.sqrt(discriminant))/(2*a)} <br>
+                root2 = ${(-b - Math.sqrt(discriminant))/(2*a)}`)
+            }
+            else if (discriminant == 0){
+                document.getElementById("roots").innerHTML = 
+                (`root1 = root2 = ${-b/(2*a)}`)
+            }
+            else {
+                document.getElementById("roots").innerHTML = 
+                (`root1 = ${-b/(2*a)} + ${(Math.sqrt(-(discriminant)))/(2*a)}i <br>
+                root2 = ${-b/(2*a)} - ${(Math.sqrt(-(discriminant)))/(2*a)}i`)
+            }
+        }
+    </script>
+</body>
+</html>

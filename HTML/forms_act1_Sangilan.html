@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Weekly Check-in</h1>
+    <input type="text" placeholder="Enter your name" id="txtName">
+    <br><br>
+    <label>What's on your mind?</label><br>
+    <textarea id="txtThoughts" cols="20" rows="10"></textarea>
+    <br>
+    <button onclick="postAPost()">Post</button>
+
+    <p id="nameArea">Name: </p>
+    <p id="thoughtsArea">What's on your mind?</p>
+
+    <script>
+        function postAPost(){
+            let name = document.getElementById('txtName').value;
+            let thoughts = document.getElementById('txtThoughts').value;
+
+            document.getElementById("nameArea").innerHTML = `Name: ${name}`;
+            document.getElementById("thoughtsArea").innerHTML = `What's on your mind? <br> ${thoughts
+            }`;
+        }
+    </script>
+</body>
+</html>

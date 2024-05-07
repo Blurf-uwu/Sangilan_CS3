@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="h">
+    <input type="number" id="w">
+
+    <button onclick="getBmi()">get bmi</button>
+
+    <h1 id="bmi"></h1>
+
+    <script>
+        
+        function getBmi(){
+            let w = parseInt(document.getElementById('w').value);
+            let h = parseInt(document.getElementById('h').value);
+            let bmi = w / h**2;
+            document.getElementById('bmi').innerHTML = 'BMI: ' + bmi;
+        }
+    </script>
+</body>
+</html>
