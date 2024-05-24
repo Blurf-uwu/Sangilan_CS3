@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <br><br>
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age">
+        <br><br>
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address">
+        <br><br>
+        <button type="submit" onclick="storeStore()">Save</button>
+    </form>
+
+    <script>
+        function storeStore() {
+
+            let name = document.getElementById('name');
+            let age = document.getElementById('age');
+            let address = document.getElementById('address');
+            //-----------------------------------------//
+            let normArray = [name.value, age.value, address.value]
+            //-----------------------------------------//
+            let objectArray = [
+                {'name': name.value},
+                {'age': age.value},
+                {'address': address.value}
+            ]
+            //-----------------------------------------//
+            sessionStorage.setItem('name', name.value);
+            sessionStorage.setItem('age', String(age.value));
+            sessionStorage.setItem('address', address.value);
+            //-----------------------------------------//
+            localStorage.setItem('name', name.value);
+            localStorage.setItem('age', String(age.value));
+            localStorage.setItem('address', address.value);
+
+
+            //output (just for fun)
+            console.log(
+                normArray,
+
+                objectArray[0]['name'], objectArray[1]['age'], objectArray[2]['address'],
+
+                sessionStorage.getItem('name'), 
+                sessionStorage.getItem('age'),
+                sessionStorage.getItem('address'),
+
+                localStorage.getItem('name'), 
+                localStorage.getItem('age'),
+                localStorage.getItem('address'),
+            )
+
+        }
+    </script>
+</body>
+</html>

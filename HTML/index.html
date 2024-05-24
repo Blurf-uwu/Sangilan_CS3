@@ -6,20 +6,11 @@
     <title>Document</title>
   </head>
   <body>
-    <input type="text" placeholder="Enter windspeed" id="txtWindSpeed" /><br />
-    <button id="submit" onclick="showResult()">Check Category</button>
-
-    <h1>Windspeed Category</h1>
-    <h2 id="result"></h2>
-
-    <script src="script.js"></script>
     <script>
-      var windspeed = document.getElementById("txtWindSpeed");
-      function showResult() {
-        var result = typhoonCategory(windspeed.value);
-        document.getElementById("result").innerHTML = result;
-      }
+      let ary = Array("one","two","three");
+      ary["human"] = "you";
 
+      document.write(ary["you"], ary["one"]);
     </script>
   </body>
 </html>
